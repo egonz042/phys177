@@ -34,8 +34,8 @@ def sampFunc(w,z):
 def sampFuncVarRange(w,z,u):
 	dw = (w[1] - w[0])
 	j = 1.
-	SI = dw * (1./3.) * (z[0] + z[-1])
 	jmax = u
+	SI = dw * (1./3.) * (z[0] + z[u])
 	for j in range(jmax):
 		if (j % 2 == 0):
 			SI += (4./3.) * dw * z[j]
