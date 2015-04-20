@@ -23,7 +23,7 @@ d = np.zeros(j)
 
 for i in range(1,j):
 	dS = Int.sampFuncVarRange(t,x,i)
-	d[i] += dS
+	d[i] += dS	
 
 plt.subplot(2,1,1)
 plt.plot(t,x,'o-',color='red')
