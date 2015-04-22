@@ -19,12 +19,14 @@ a = float(x[-1])
 while (j==0):
 	Iold = I
 	I *= 0.5
-	for k in range(i):
-		I += (((1./2.)**i) * ((2.**k)*a))
-	E = (1./3.) * (I - Iold)
+	n = ((2**i)/2)
+	for k in range(n):
+		w = (((1./2.)**i) * (((2.*k)+1)*a))
+		z = ((np.sin(np.sqrt(100 * w)))**2)
+		I += (z * ((1./2.)**i))
+	E = abs((1./3.) * (I - Iold))
 
 	print 'Iteration {0}:\n The integral was broken into {1} slices.\n The calculated value of the integral is {2:0.7}\n with a second order error of {3:0.3}.'.format(i,int(i*2),I,E)
-
 	if (E < Acc):
 		j = 1
 	else:
